@@ -5,6 +5,7 @@
         <button @click="changeName">change name</button>
         <button @click="changeAge">change age</button>
         <button @click="showTel">check tel</button>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -41,6 +42,14 @@
     let name = ref('alice') //非响应式
     let age = ref(12) //非响应式
     let tel = "154" //非响应式
+
+    // const route = useRoute()
+    // const router = useRouter()
+
+    // console.log(route.query)
+    // console.log(route.paramas)
+    // console.log(router.push)
+    // console.log(router.replace)
 
     function changeName(){
         name.value = 'ss'

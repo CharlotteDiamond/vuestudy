@@ -2,8 +2,10 @@
     <div class="app">
         <Header/>
         <div class="navigate">
-            <RouterLink to="/home" active-class="shishi">Hello World</RouterLink>
+            <!-- <RouterLink to="/home" active-class="shishi">Hello World</RouterLink> -->
             <RouterLink :to="{path:'/person'}" active-class="trytry">Person</RouterLink>
+            <RouterLink :to="{name:'front-page'}">Hello World</RouterLink>
+            <RouterLink :to="{path:'/person/child'}">child</RouterLink>
             <!-- <a href="/home">Hello World</a> -->
             <!-- <a href="/person">Person</a> -->
         </div>
