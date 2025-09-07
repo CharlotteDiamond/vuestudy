@@ -3,9 +3,9 @@
         <Header/>
         <div class="navigate">
             <RouterLink to="/home" active-class="shishi">Hello World</RouterLink>
-            <!-- <RouterLink :to="{path:/'person'}" active-class="trytry">Person</RouterLink> -->
+            <RouterLink :to="{path:'/person'}" active-class="trytry">Person</RouterLink>
             <!-- <a href="/home">Hello World</a> -->
-            <a href="/person">Person</a>
+            <!-- <a href="/person">Person</a> -->
         </div>
     </div>
     <div class="main-content">
