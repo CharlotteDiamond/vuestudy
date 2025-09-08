@@ -1,6 +1,7 @@
 <template>
     <div class="count">
         <h2>Sum is :{{countStore.sum}}</h2>
+        <h3>看能出现什么：{{ countStore.something }},再试试{{ countStore.try }}</h3>
         <select v-model.number="choice">
             <option value="1">1</option>
             <option value="5">5</option>
@@ -18,12 +19,12 @@
     const countStore = useCountStore()
     // console.log('@@@',countStore.sum)
 
-
     let sum = ref(1)
     let choice = ref(1) //
 
     function add(){
-        sum.value+=choice.value
+        countStore.value+=1
+        //sum.value+=choice.value
     }
     function minus(){
         sum.value-=choice.value
