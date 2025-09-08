@@ -3,7 +3,7 @@
         <h2>Get a love talk</h2>
         <button @click="getlovetalk">get a love talk</button>
         <ul>
-            <li v-for="talk in talklist":key = "talk.id">{{ talk }}</li>
+            <li v-for="talk in talkStore.talklist":key = "talk.id">{{ talk.title }}</li>
         </ul>
     </div>
     <Count/>
@@ -13,6 +13,9 @@
     import { reactive } from 'vue';
     import axios from 'axios';
     import { nanoid } from 'nanoid';
+    import {useTalkStore} from '../store/lovetalk'
+
+    const talkStore = useTalkStore()
 
     let talklist = reactive([
         {id:'talk1',title:'sdfghjk'},
@@ -22,7 +25,7 @@
     ])
 
     async function getlovetalk(){
-        let {data:{content:title}} = await axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
+        let {data:{content:title}} = await axios.get('http://api.uomg.com/api/rand.qinghua?format=json')
         let obj = {id:nanoid(),title}
         talklist.unshift(obj)
     }

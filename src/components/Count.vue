@@ -1,6 +1,6 @@
 <template>
     <div class="count">
-        <h2>Sum is :{{ sum }}</h2>
+        <h2>Sum is :{{countStore.sum}}</h2>
         <select v-model.number="choice">
             <option value="1">1</option>
             <option value="5">5</option>
@@ -13,6 +13,11 @@
 
 <script setup name="count" lang="ts">
     import {ref} from 'vue'
+    import {useCountStore} from '../store/count'
+
+    const countStore = useCountStore()
+    // console.log('@@@',countStore.sum)
+
 
     let sum = ref(1)
     let choice = ref(1) //
