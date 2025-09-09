@@ -23,11 +23,17 @@
     let choice = ref(1) //
 
     function add(){
-        countStore.value+=1
+        // countStore.sum+=1
+        countStore.$patch({
+            sum:22,
+            something:"??",
+            try:"shshsh"
+        })
         //sum.value+=choice.value
     }
     function minus(){
-        sum.value-=choice.value
+        countStore.sum-=1
+        // sum.value-=choice.value
     }
 </script>
 
