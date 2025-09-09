@@ -13,22 +13,25 @@
     import { reactive } from 'vue';
     import axios from 'axios';
     import { nanoid } from 'nanoid';
-    import {useTalkStore} from '../store/lovetalk'
+    import {useTalkStore, storeToRefs} from '../store/lovetalk'
 
     const talkStore = useTalkStore()
+    const {talklist,getlovetalk} = storeToRefs(talkStore)
+    talkStore.$subscribe((mutate,state)=>{
+        localStorage.setItem('talklist',JSON.stringify(state.talkList))
+    })
+    // let talklist = reactive([
+    //     {id:'talk1',title:'sdfghjk'},
+    //     {id:'talk2',title:'hgfds'},
+    //     {id:'talk3',title:'1234567k'},
+    //     {id:'talk4',title:'9876543'}
+    // ])
 
-    let talklist = reactive([
-        {id:'talk1',title:'sdfghjk'},
-        {id:'talk2',title:'hgfds'},
-        {id:'talk3',title:'1234567k'},
-        {id:'talk4',title:'9876543'}
-    ])
-
-    async function getlovetalk(){
-        let {data:{content:title}} = await axios.get('http://api.uomg.com/api/rand.qinghua?format=json')
-        let obj = {id:nanoid(),title}
-        talklist.unshift(obj)
-    }
+    // async function getlovetalk(){
+    //     let {data:{content:title}} = await axios.get('http://api.uomg.com/api/rand.qinghua?format=json')
+    //     let obj = {id:nanoid(),title}
+    //     talklist.unshift(obj)
+    // }
 </script>
 
 <style scoped>
