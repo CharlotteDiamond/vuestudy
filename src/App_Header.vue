@@ -6,6 +6,7 @@
             <RouterLink :to="{path:'/person'}" active-class="trytry">Person</RouterLink>
             <RouterLink :to="{name:'front-page'}">Hello World</RouterLink>
             <RouterLink :to="{path:'/person/child'}">child</RouterLink>
+            <RouterLink :to="{path:'/event'}">event</RouterLink>
             <!-- <a href="/home">Hello World</a> -->
             <!-- <a href="/person">Person</a> -->
         </div>

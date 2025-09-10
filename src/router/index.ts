@@ -3,6 +3,7 @@ import {createRouter,createWebHistory} from 'vue-router'
 import HelloWorld from "../pages/HelloWorld.vue";
 import Person from '../pages/Person.vue'
 import Children from '../pages/Children.vue';
+import Father from '../pages/Father.vue';
 
 const router = createRouter({
     history:createWebHistory(),// router work mode
@@ -26,6 +27,10 @@ const router = createRouter({
         {
             path:'/haveatry',
             redirect:'/home'
+        },
+        {
+            path:'/event',
+            component:Father
         }
     ]
 })
